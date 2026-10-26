@@ -1,6 +1,6 @@
 # Solar Field — WebXR mixed-reality simulator
 
-An interactive, Spanish-language solar-generator experience built with Three.js and Vite. It preserves the supplied product photograph as the visual reference, then adds an interactive 3D solar/daylight scene, simulated device connections and a battery-survival challenge.
+An interactive, Spanish-language solar-generator experience built with Three.js and Vite. The portable station is assembled from procedural meshes—metal enclosure, reinforced corners, handle, live LCD, sockets, LEDs, adjustable photovoltaic frame and individual blue cells—with simulated device connections and a battery-survival challenge. The supplied photograph is retained as a design reference only; it is not loaded or used as a scene texture.
 
 ## Play locally
 
@@ -15,8 +15,8 @@ Open the URL printed by Vite. To verify the production bundle locally, use `npm 
 
 ## Controls and simulation
 
-- Drag the scene to orbit; click the sun to advance the simulated time or click a 3D appliance to connect/disconnect it.
-- Adjust the time and latitude sliders to change the simulated sun position and solar generation.
+- Drag to orbit around the actual 3D meshes through 360°; use the wheel or a two-finger pinch to zoom. Click the sun to advance the simulated time or click a 3D appliance to connect/disconnect it.
+- Adjust the time and latitude sliders to change the simulated sun position and solar generation; the hinged 3D panel smoothly tilts and yaws to follow it.
 - Toggle the LED lamp, phone and laptop to change the load. Battery percentage, generated power and consumption update in real time.
 - The 60-minute challenge runs accelerated (one real second represents one simulated minute). Keep the battery above 70% to complete it.
 - Use **Enter VR** in a compatible WebXR browser/headset, or **Explore in augmented reality** on a compatible AR device. Controller rays select the virtual sun and appliances in VR. AR asks the browser for camera/environment access.
