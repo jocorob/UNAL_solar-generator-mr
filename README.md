@@ -1,26 +1,34 @@
-# Solar Generator
+# Solar Field — WebXR mixed-reality simulator
 
-A responsive, Spanish-language static landing page for the portable solar-generator concept. The autonomy estimator runs entirely in the browser; no build step, backend, or package install is required.
+An interactive, Spanish-language solar-generator experience built with Three.js and Vite. It preserves the supplied product photograph as the visual reference, then adds an interactive 3D solar/daylight scene, simulated device connections and a battery-survival challenge.
 
-## Run locally
+## Play locally
 
-From the repository root, start any static file server, for example:
+Requires Node.js 22 or newer.
 
 ```sh
-python3 -m http.server 8000
+npm ci
+npm run dev
 ```
 
-Then open <http://localhost:8000>.
+Open the URL printed by Vite. To verify the production bundle locally, use `npm run build` and `npm run preview`.
 
-## Publish on GitHub Pages
+## Controls and simulation
 
-The workflow at `.github/workflows/pages.yml` publishes the repository root whenever a commit reaches `main`, or when manually started from the **Actions** tab.
+- Drag the scene to orbit; click the sun to advance the simulated time or click a 3D appliance to connect/disconnect it.
+- Adjust the time and latitude sliders to change the simulated sun position and solar generation.
+- Toggle the LED lamp, phone and laptop to change the load. Battery percentage, generated power and consumption update in real time.
+- The 60-minute challenge runs accelerated (one real second represents one simulated minute). Keep the battery above 70% to complete it.
+- Use **Enter VR** in a compatible WebXR browser/headset, or **Explore in augmented reality** on a compatible AR device. Controller rays select the virtual sun and appliances in VR. AR asks the browser for camera/environment access.
 
-1. In the repository, open **Settings → Pages**.
-2. Set **Build and deployment → Source** to **GitHub Actions**.
-3. Merge/push the site to `main` (or run **Deploy static site to GitHub Pages** from **Actions**).
-4. Find the published URL in the workflow run or under **Settings → Pages**.
+The simulator is educational: the 120 W peak, battery capacity, appliance loads, sunlight and charge behavior are illustrative scenario values, not measured or verified product specifications. The equinox model is deliberately simplified and is not a local weather/solar forecast.
 
-The site uses relative asset paths, so it works both at a user/organization Pages root and at a project Pages subpath. `.nojekyll` disables Jekyll processing.
+## Deploy on GitHub Pages
 
-> The calculator uses editable example capacity and load values for illustration. It does not represent verified product specifications.
+The workflow `.github/workflows/pages.yml` builds the Vite app and deploys `dist/` whenever a commit reaches `main`, or when manually run from **Actions**.
+
+1. In **Settings → Pages**, set **Build and deployment → Source** to **GitHub Actions**.
+2. Merge/push changes to `main` or manually run **Deploy solar mixed-reality experience to GitHub Pages**.
+3. Open the deployment URL shown in the workflow or **Settings → Pages**.
+
+Vite uses relative asset paths, which work at a repository subpath as well as at a custom domain. GitHub Pages is served over HTTPS, as required for WebXR. Actual VR/AR session support depends on the user's browser, operating system, hardware and permissions; the non-immersive 3D simulator remains available without a headset.
