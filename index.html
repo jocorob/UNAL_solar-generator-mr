@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a18">
+  <meta name="description" content="Explora una estación solar portátil: energía limpia, diseño resistente y una calculadora sencilla para planear tu autonomía.">
+  <title>Solar Generator — energía lista para salir</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23c9f36a'/%3E%3Cpath d='M20 7 9 24h9l-1 9 14-18h-10z' fill='%23101a18'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Solar Generator, inicio">
+      <span class="brand-mark" aria-hidden="true">✳</span>
+      <span>SOLAR<span class="brand-light">/</span>GEN</span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#producto">El generador</a>
+      <a href="#calculadora">Calculadora</a>
+      <a class="nav-cta" href="#calculadora">Planea tu energía <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> ENERGÍA PARA DONDE VAYAS</p>
+        <h1>El sol te sigue.<br><span>Tu energía, también.</span></h1>
+        <p class="hero-description">Una estación solar portátil para mantener tus esenciales encendidos, lejos de la toma de corriente.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#calculadora">Calcula tu autonomía <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="#producto">Conoce el concepto <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-note"><span class="sun-icon" aria-hidden="true">☼</span><span>Diseñada para acompañar<br>tus días fuera de la red.</span></div>
+      </div>
+      <div class="hero-visual" aria-label="Estación portátil con panel solar integrado">
+        <div class="image-frame"><img src="image.png" alt="Generador solar portátil de carcasa resistente, con panel solar y pantalla de batería" fetchpriority="high"></div>
+        <div class="image-caption"><span>01 / ENERGÍA PORTÁTIL</span><span>Sol · almacenamiento · libertad</span></div>
+        <div class="floating-tag"><span class="tag-icon" aria-hidden="true">↗</span><span><strong>Sin enchufe.</strong><br>Sin límites.</span></div>
+      </div>
+      <div class="hero-index" aria-hidden="true">01 — ENERGÍA EN MOVIMIENTO</div>
+    </section>
+
+    <section class="benefits" id="producto" aria-label="Características del concepto">
+      <div class="benefit-intro"><span class="eyebrow">HECHA PARA LO ESENCIAL</span><p>Menos dependencia.<br><em>Más posibilidades.</em></p></div>
+      <article class="benefit"><span class="benefit-number">01</span><span class="benefit-icon" aria-hidden="true">◉</span><h2>Captura el sol</h2><p>Un panel integrado convierte la luz del día en energía para tu próxima aventura.</p></article>
+      <article class="benefit"><span class="benefit-number">02</span><span class="benefit-icon" aria-hidden="true">▤</span><h2>Todo a la vista</h2><p>Consulta el estado de carga y organiza mejor el uso de tus dispositivos.</p></article>
+      <article class="benefit"><span class="benefit-number">03</span><span class="benefit-icon" aria-hidden="true">⌁</span><h2>Lista para salir</h2><p>Un formato portátil pensado para llevar energía a donde más la necesitas.</p></article>
+    </section>
+
+    <section class="calculator" id="calculadora">
+      <div class="calculator-copy">
+        <p class="eyebrow"><span class="status-dot"></span> TU PLAN, EN UN MINUTO</p>
+        <h2>¿Cuánto tiempo<br>puede durar?</h2>
+        <p>Ajusta la capacidad y el consumo para obtener una referencia de autonomía. Es una estimación orientativa, no una especificación del producto.</p>
+        <div class="calc-footnote"><span aria-hidden="true">ⓘ</span> La autonomía real varía según el dispositivo, la conversión y las condiciones de uso.</div>
+      </div>
+      <div class="calculator-card">
+        <div class="calc-heading"><span>ESTIMADOR DE AUTONOMÍA</span><span class="live-label"><i></i> EN VIVO</span></div>
+        <label class="range-label" for="capacity"><span>Capacidad útil</span><strong><output id="capacity-value" for="capacity">500</output> Wh</strong></label>
+        <input id="capacity" type="range" min="100" max="1500" step="50" value="500">
+        <div class="range-ends"><span>100 Wh</span><span>1.500 Wh</span></div>
+        <label class="range-label load-label" for="load"><span>Consumo conectado</span><strong><output id="load-value" for="load">60</output> W</strong></label>
+        <input id="load" type="range" min="10" max="500" step="5" value="60">
+        <div class="range-ends"><span>10 W</span><span>500 W</span></div>
+        <div class="result"><div><span class="result-label">AUTONOMÍA ESTIMADA</span><strong id="runtime">8,3 <small>horas</small></strong></div><span class="result-icon" aria-hidden="true">◷</span></div>
+        <p class="result-example" id="example">Por ejemplo, una lámpara LED y un teléfono.</p>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div><span class="eyebrow">ENERGÍA QUE VA CONTIGO</span><h2>Tu próxima aventura<br>empieza con el sol.</h2></div>
+      <a class="button button-light" href="#inicio">Volver al inicio <span aria-hidden="true">↑</span></a>
+    </section>
+  </main>
+  <footer><a class="brand footer-brand" href="#inicio"><span class="brand-mark" aria-hidden="true">✳</span><span>SOLAR<span class="brand-light">/</span>GEN</span></a><p>Un concepto de energía portátil. Cálculos con fines ilustrativos.</p><a href="#inicio">Volver arriba ↑</a></footer>
+</body>
+</html>
